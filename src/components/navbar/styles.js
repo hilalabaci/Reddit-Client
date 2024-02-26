@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header`
   border-bottom: solid #ffffff1a;
   border-bottom-width: 0.001rem;
   display: flex;

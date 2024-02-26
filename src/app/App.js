@@ -1,14 +1,18 @@
 import React from "react";
-import "../app/App.css";
+import "../app/App.css"
 import { SubredditsList } from "../components/subredditsList";
 import AppLayout from "./AppLayout";
+import { Main, PostWraper, SubredditListWrapper } from "./styles";
 
 function App() {
   return (
     <AppLayout>
-      <div>
-        <SubredditsList />
-      </div>
+      <Main>
+        <PostWraper></PostWraper>
+        <SubredditListWrapper>
+          <SubredditsList />
+        </SubredditListWrapper>
+      </Main>
     </AppLayout>
   );
 }
