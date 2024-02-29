@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Card } from "../card";
 import {
   TitleSubreddit,
   UlSubreddit,
@@ -27,22 +26,20 @@ export function SubredditsList() {
 
   if (isLoading) return <div>Loading now...</div>;
   return (
-    <Card>
-      <Wrapper>
-        <TitleSubreddit>Communities</TitleSubreddit>
-        <UlSubreddit>
-          {subreddits.map((subreddit) => (
-            <LinkSubreddit>
-              <LiSubreddit>
-                <IconSubreddit
-                  src={subreddit.icon ? subreddit.icon : "/img/logoReddit.webp"}
-                />
-                <PrefixedName>{subreddit.prefixedName}</PrefixedName>
-              </LiSubreddit>
-            </LinkSubreddit>
-          ))}
-        </UlSubreddit>
-      </Wrapper>
-    </Card>
+    <Wrapper>
+      <TitleSubreddit>Communities</TitleSubreddit>
+      <UlSubreddit>
+        {subreddits.map((subreddit) => (
+          <LinkSubreddit>
+            <LiSubreddit>
+              <IconSubreddit
+                src={subreddit.icon ? subreddit.icon : "/img/logoReddit.webp"}
+              />
+              <PrefixedName>{subreddit.prefixedName}</PrefixedName>
+            </LiSubreddit>
+          </LinkSubreddit>
+        ))}
+      </UlSubreddit>
+    </Wrapper>
   );
 }

@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+#colors:
+text color: #8e9fa5 ;
+background color : #0b1416 ;
 # dependencies
 /node_modules
 /.pnp

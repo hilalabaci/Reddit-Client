@@ -5,7 +5,7 @@ export const Main = styled.main`
   padding: 1rem 2rem;
 `;
 export const PostWraper = styled.article`
-  flex: 3;
+  flex: 4;
 `;
 export const SubredditListWrapper = styled.aside`
   flex: 1;

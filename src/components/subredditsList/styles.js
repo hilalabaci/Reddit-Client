@@ -6,14 +6,13 @@ export const Wrapper = styled.div`
 export const TitleSubreddit = styled.h2`
   text-transform: uppercase;
   color: #82959b;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Fredoka";
-  padding: 10px 0;
 `;
 export const UlSubreddit = styled.ul`
   list-style-type: none;
   display: flex;
-  gap: 25px;
+  gap: 18px;
   flex-direction: column;
   padding: 0;
 `;
@@ -27,6 +26,10 @@ export const LiSubreddit = styled.li`
 export const LinkSubreddit = styled.a`
   color: #8e9fa5;
   font-family: "Fredoka";
+  :hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 export const IconSubreddit = styled.img`
   width: 35px;
@@ -34,5 +37,5 @@ export const IconSubreddit = styled.img`
   border-radius: 50px;
 `;
 export const PrefixedName = styled.span`
-  font-size: 18px;
+  font-size: 15px;
 `;
