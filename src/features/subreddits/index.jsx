@@ -12,8 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   isLoadingSubreddits,
   selectSubreddits,
-} from "../../features/subreddit/subredditsSlice";
-import { getSubreddits } from "../../features/subreddit/subredditsAPI";
+} from "../subreddits/subredditsSlice";
+import { getSubreddits } from "./subredditsAPI";
 
 export function SubredditsList() {
   const dispatch = useDispatch();

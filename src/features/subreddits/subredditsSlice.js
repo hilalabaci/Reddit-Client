@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getSubreddits } from "../subreddit/subredditsAPI";
+import { getSubreddits } from "./subredditsAPI";
 
 export const subredditsSlice = createSlice({
   name: "Subreddits",

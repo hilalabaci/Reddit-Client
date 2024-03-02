@@ -33,6 +33,9 @@ export const UserName = styled.div`
   font-weight: 700;
   color: #b8c5c9;
 `;
+export const SelfText = styled.p`
+  color: white;
+`;
 export const DatePosted = styled.div`
   color: #82959b;
   font-size: 0.75rem;
@@ -46,6 +49,7 @@ export const ImgPosted = styled.img`
   width: 500px;
   border-radius: 20px;
 `;
+export const VideoPosted = styled.video``;
 export const ActionDetails = styled.div`
   display: flex;
   flex-direction: row;
