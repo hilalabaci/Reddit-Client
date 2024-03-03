@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ArrowDown,
   ArrowUp,
@@ -8,13 +8,27 @@ import {
 } from "./styles";
 
 export function VotesofPost(props) {
+  const [backgroundForButton, setBackgroundForButton] = useState("#1a282d");
+
+  const HandlerChangeforArrowUp = () => {
+    setBackgroundForButton("#d93a00");
+  };
+  const HandlerChangeforArrowDown = () => {
+    setBackgroundForButton("#6a5cff");
+  };
   return (
-    <Wrapper>
-      <ButtonforArrows>
+    <Wrapper $backgroundColor={backgroundForButton}>
+      <ButtonforArrows
+        onClick={HandlerChangeforArrowUp}
+        $backgroundColor={backgroundForButton}
+      >
         <ArrowUp />
       </ButtonforArrows>
       <Numbers>{props.votes}</Numbers>
-      <ButtonforArrows>
+      <ButtonforArrows
+        onClick={HandlerChangeforArrowDown}
+        $backgroundColor={backgroundForButton}
+      >
         <ArrowDown />
       </ButtonforArrows>
     </Wrapper>

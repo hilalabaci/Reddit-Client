@@ -64,6 +64,9 @@ export const CommentPost = styled.div`
   font-size: 11px;
   font-weight: bold;
   gap: 6px;
+  &:hover {
+    background-color: #223237;
+  }
 `;
 export const CommentIcon = styled(ModeCommentOutlinedIcon)`
   width: 1.1rem !important;

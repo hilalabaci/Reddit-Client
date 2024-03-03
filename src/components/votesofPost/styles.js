@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1a282d;
+  background-color: ${(props) => props.$backgroundColor || "#1a282d"};
   border-radius: 50px;
 `;
 
@@ -16,39 +16,26 @@ export const Numbers = styled.p`
   font-size: 11px;
 `;
 export const ButtonforArrows = styled.button`
-  background-color: #1a282d;
+  background-color: ${(props) => props.$backgroundColor || "#1a282d"};
   color: #8e9fa5;
   border: none;
   outline: none;
   border-radius: 50px;
-  :active${Wrapper} {
-    background-color: #d93a00;
+  &:hover {
+    background-color: #223237;
   }
-  :focus:focus${Wrapper} {
-    background-color: #d93a00;
-  }
-  :target ${Wrapper} {
-    background-color: #d93a00;
-  }
-
-  /*:active {
-    .Wrapper {
-      background-color: #d93a00;
-    }
-    //background-color: ${(props) => props.clickedEvent};
-  }*/
 `;
 export const ArrowUp = styled(ArrowUpwardOutlinedIcon)`
   width: 1.1rem !important;
   color: white;
-  :hover {
+  &:hover {
     color: #d93a00 !important;
   }
 `;
 export const ArrowDown = styled(ArrowDownwardOutlinedIcon)`
   width: 1.1rem !important;
   color: white;
-  :hover {
+  &:hover {
     color: #6a5cff !important;
   }
 `;

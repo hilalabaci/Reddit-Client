@@ -26,6 +26,7 @@ export const LiSubreddit = styled.li`
 `;
 export const LinkSubreddit = styled(Link)`
   color: #8e9fa5;
+  text-decoration: none;
   font-family: "Fredoka";
   :hover {
     text-decoration: underline;
