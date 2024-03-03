@@ -1,24 +1,23 @@
 import React from "react";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 import "../app/App.css";
-import AppLayout from "./AppLayout";
-import { Main, PostWraper, SubredditListWrapper } from "./styles";
-import { Posts } from "../features/posts/index";
-import { SubredditsList } from "../features/subreddits/index";
+import SubredditPage from "../pages/subredditPage";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<SubredditPage />}>
+      <Route path="r/:name" element={<SubredditPage />} />
+    </Route>
+  )
+);
 
 function App() {
-  return (
-    <AppLayout>
-      <Main>
-        <PostWraper>
-          <Posts />
-          <Posts />
-        </PostWraper>
-        <SubredditListWrapper>
-          <SubredditsList />
-        </SubredditListWrapper>
-      </Main>
-    </AppLayout>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

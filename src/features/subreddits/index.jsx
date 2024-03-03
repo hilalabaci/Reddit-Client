@@ -15,14 +15,14 @@ import {
 } from "../subreddits/subredditsSlice";
 import { getSubreddits } from "./subredditsAPI";
 
-export function SubredditsList() {
+export function SubredditsList(props) {
   const dispatch = useDispatch();
   const subreddits = useSelector(selectSubreddits);
   const isLoading = useSelector(isLoadingSubreddits);
 
   useEffect(() => {
-    dispatch(getSubreddits());
-  }, [dispatch]);
+    dispatch(getSubreddits(props.name));
+  }, [dispatch, props.name]);
 
   if (isLoading) return <div>Loading now...</div>;
   return (
@@ -30,7 +30,7 @@ export function SubredditsList() {
       <TitleSubreddit>Communities</TitleSubreddit>
       <UlSubreddit>
         {subreddits.map((subreddit) => (
-          <LinkSubreddit>
+          <LinkSubreddit key={subreddit.id} to={`/${subreddit.prefixedName}`}>
             <LiSubreddit>
               <IconSubreddit
                 src={subreddit.icon ? subreddit.icon : "/img/logoReddit.webp"}

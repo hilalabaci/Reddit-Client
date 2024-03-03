@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   padding: 1rem;
@@ -23,7 +24,7 @@ export const LiSubreddit = styled.li`
   justify-content: flex-start;
   gap: 15px;
 `;
-export const LinkSubreddit = styled.a`
+export const LinkSubreddit = styled(Link)`
   color: #8e9fa5;
   font-family: "Fredoka";
   :hover {

@@ -1,13 +1,7 @@
 import styled from "styled-components";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 
-export const PostContainer = styled.div`
-  border-top: solid #ffffff1a;
-  border-top-width: 0.001rem;
-  border-bottom: solid #ffffff1a;
-  border-bottom-width: 0.001rem;
-`;
-
+export const PostContainer = styled.div``;
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,6 +9,10 @@ export const Wrapper = styled.div`
   margin: 0 20px;
   padding: 10px 0;
   flex: 1;
+  border-top: solid #ffffff1a;
+  border-top-width: 0.001rem;
+  border-bottom: solid #ffffff1a;
+  border-bottom-width: 0.001rem;
 `;
 
 export const UserInfo = styled.div`

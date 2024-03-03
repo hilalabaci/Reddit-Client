@@ -1,12 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const subreddit = "";
+const postsBaseUrl = (subreddit) => {
+  if (!subreddit) subreddit = "Home";
 
-const postsBaseUrl = `https://www.reddit.com/${subreddit}/.json`;
+  return `https://www.reddit.com/r/${subreddit}/.json`;
+};
 
-export const getPosts = createAsyncThunk("Posts/getPosts", async () => {
+export const getPosts = createAsyncThunk("Posts/getPosts", async (name) => {
   try {
-    const response = await fetch(postsBaseUrl, {
+    const response = await fetch(postsBaseUrl(name), {
       method: "GET",
     });
     if (response.ok) {
@@ -18,9 +20,10 @@ export const getPosts = createAsyncThunk("Posts/getPosts", async () => {
         title: child.data.title,
         selftext: child.data.selftext,
         img: child.data.url_overridden_by_dest,
-        video: child.data.secure_media?.reddit_video.scrubber_media_url,
+        video: child.data.secure_media?.reddit_video?.scrubber_media_url,
         num_comments: child.data.num_comments,
         ups: child.data.ups,
+        created: child.data.created,
       }));
       return posts;
     }

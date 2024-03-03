@@ -19,14 +19,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "./postsAPI";
 import { isLoadingPosts, selectPosts } from "./postsSlice";
 
-export function Posts() {
+export function Posts(props) {
   const dispatch = useDispatch();
   const posts = useSelector(selectPosts);
   const isLoading = useSelector(isLoadingPosts);
 
   useEffect(() => {
-    dispatch(getPosts());
-  }, [dispatch]);
+    dispatch(getPosts(props.name));
+  }, [dispatch, props.name]);
 
   if (isLoading) return <div>Loading now...</div>;
   return (
@@ -36,14 +36,16 @@ export function Posts() {
           <UserInfo>
             <UserImg src="/img/logoReddit.webp" />
             <UserName>{post.author}</UserName>
-            <DatePosted>. 11 hr ago</DatePosted>
+            <DatePosted>
+              . {new Date(Number(post.created) * 1000).toDateString()}
+            </DatePosted>
           </UserInfo>
           <PostDetail>{post.title}</PostDetail>
           <SelfText>{post.selftext}</SelfText>
           {post.video ? (
             <VideoPosted
-              width="200px"
-              height="200px"
+              width="500px"
+              height="500px"
               autoplay="autoplay"
               muted
               loop
